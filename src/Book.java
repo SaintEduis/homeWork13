@@ -21,6 +21,8 @@ public class Book {
         this.yearOfPublication = yearOfPublication;
     }
 
+    public String getAuthor() {return this.author.toString();}
+
     @Override
     public String toString() {
         return name + " " + author.toString() + " " + yearOfPublication;
@@ -32,7 +34,7 @@ public class Book {
             return false;
         }
         Book book2 = (Book) other;
-        return name.equals(book2.name);
+        return (name.equals(book2.name)) && (yearOfPublication == book2.getYearOfPublication()) && (this.getAuthor().equals(book2.getAuthor()));
     }
 
     @Override
